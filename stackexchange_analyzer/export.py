@@ -1,17 +1,14 @@
 import json
-from jinja2 import Template
+import csv
 
-HTML_TEMPLATE_PATH = 'stackexchange_analyzer/templates/result.html'
+def export_to_json(res, export_path):
+	return
 
+def export_to_csv(res, export_path):
+	with open(export_path, 'w', newline='') as csvfile:
+		fieldnames = ['idx', 'q1', 'q2', 'duplicate']
+		writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
 
-def export_to_json(result, export_path):
-    with open(export_path, 'w') as export_file:
-        export_file.write(json.dumps(result))
-
-
-def export_to_html(result, export_path):
-    with open(HTML_TEMPLATE_PATH) as template_file:
-        template = Template(template_file.read())
-    rendered_html = template.render(questions=result)
-    with open(export_path, 'w') as export_file:
-        export_file.write(rendered_html)
+		writer.writeheader()
+		for curdict in res:
+			writer.writerow(curdict)

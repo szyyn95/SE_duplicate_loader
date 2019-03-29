@@ -1,124 +1,118 @@
 import xml.etree.ElementTree as ElementTree
 import stackexchange_analyzer.export as export
+import stackexchange_analyzer.util as util
+import random
+import collections
 
-EXPORT_TYPES = {'json': export.export_to_json, 'html': export.export_to_html}
+EXPORT_TYPES = {'json': export.export_to_json, 
+                'csv': export.export_to_csv}
 
 
 class Analyzer:
     """Class that loads from file and analyze StackExchange data"""
-    def __init__(self, posts_path, posts_links_path, posts_num):
-        # Posts dump file path
+    def __init__(self, posts_path, posts_links_path, ratio):
         self.posts_path = posts_path
-        # ElementTree root for posts
-        self.posts = None
-
-        # Posts links dump file path
+        self.posts = {} # here we only record all questions (which contains 'Title' field)
         self.posts_links_path = posts_links_path
-        # ElementTree root for posts links
         self.posts_links = None
+        self.all_posts_ids = set()
+        self.duplicated_posts = {}
+        self.nonduplicated_posts = []
 
-        # Most duplicated posts.
-        # [(post_id, [duplicate_id, ...]), ...]
-        self.top_duplicated_posts = None
-
-        # Num of top duplicated posts to show
-        self.posts_num = posts_num
-
-        # Information about most duplicated posts. List of summaries.
-        # [{title: 'Some question', link: '...', duplicates_num: 10,
-        #   duplicates: [{title: '...', link: '...'}, ...]}]
-        self.result = []
+        self.ratio = ratio
+        self.dups = 0
+        self.res = []
 
     def load_data(self):
         """Load dump files to memory"""
         print('Loading data...')
-        self.posts = ElementTree.parse(self.posts_path).getroot()
+        raw_posts = ElementTree.parse(self.posts_path).getroot()
+        for raw_post in raw_posts:
+            raw_post = dict(raw_post.items())
+            if 'Title' in raw_post:
+                # we only keep questions 
+                self.posts[raw_post['Id']] = raw_post['Title']
+
         self.posts_links = ElementTree.parse(self.posts_links_path).getroot()
         print('Data loaded.')
 
     def analyze(self):
         """Analyze dumps and prepare data to export"""
         print('Analyze started.')
-        self._find_top_duplicates(self.posts_num)
+        self._find_top_duplicates()
+        self._generate_noneDuplicates()
+        self.duplicated_posts = self.duplicated_posts.items()
         self._prepare_result()
 
-    def _find_top_duplicates(self, n=100):
+    def _find_top_duplicates(self):
         print('Counting posts duplicates...')
         # There is a problem in Stackoverflow dataset.
         # If question was deleted by moderator, all relations with it don't
         # deleting too. So we should manually check is post deleted or not.
-        all_posts_ids = set()
-        for post in self.posts:
-            post = dict(post.items())
-            all_posts_ids.add(post['Id'])
-
-        post_duplicates = {}
         for post_link in self.posts_links:
             # Convert entry to a dict
             post_link = dict(post_link.items())
             # If not 'duplicate' relation, just pass it
-            if not post_link['LinkTypeId'] == '3':
+            if post_link['LinkTypeId'] != '3':
                 continue
             post_id = post_link['PostId']
             related_post = post_link['RelatedPostId']
             # If one of posts is deleted, pass it too
-            if (post_id not in all_posts_ids
-                or related_post not in all_posts_ids):
+            if (post_id not in self.posts or related_post not in self.posts):
                 continue
             # Add new duplicate to duplicates list
-            current_duplicates = post_duplicates.get(post_id, [])
-            post_duplicates[related_post] = current_duplicates + [post_id]
-        print('Duplicates counted.')
-        print('Sorting duplicates...')
-        # Get only n (by default, 100) first elements
-        self.top_duplicated_posts = sorted(post_duplicates.items(),
-                                           key=lambda x: len(x[1]),
-                                           reverse=True)[:n]
-        print('Duplication top:', self.top_duplicated_posts)
-        print('Sorting done.')
+            cur_dups = self.duplicated_posts.get(post_id, [])
+            self.duplicated_posts[related_post] = cur_dups + [post_id]
+
+        for dup in self.duplicated_posts:
+            self.dups += len(self.duplicated_posts[dup])
+        print (self.duplicated_posts)
+        return
+
+    def _generate_noneDuplicates(self):
+        nondup_amount = int(round(self.dups * self.ratio))
+        print ("Non-duplicate pairs amount: " + str(nondup_amount))
+        used_pair = collections.defaultdict(set)
+        while True:
+            id1, id2 = random.sample(self.posts.keys(), 2)
+            if id1 in self.duplicated_posts.get(id2, []) or id2 in self.duplicated_posts.get(id1, []):
+                continue
+            if id1 in used_pair[id2] or id2 in used_pair[id1]:
+                continue
+            self.nonduplicated_posts.append([id1, id2])
+            used_pair[id2].add(id1)
+            used_pair[id1].add(id2)
+            if len(self.nonduplicated_posts) >= nondup_amount:
+                break
+
+        print (self.nonduplicated_posts)
+        return
 
     def _prepare_result(self):
-        """Load information about posts and duplicates
-           to prepare information for exporting result"""
-        # All posts are storing in the list with len == n.
-        # So if we will load information about each post in duplicates top,
-        # algorithm will work for O((k * m) * n), where k is self.posts_num and
-        # m is average of numbers of duplicates from question duplication top.
-        # Optimization. Let's save all needed posts ids to set and iterate
-        # throw all posts list only one time.
-        # It will work for O(k * m + n + (k * m)^2). Because k and m much
-        # smaller than n, it will be work faster.
-        result_posts_ids = set()
-        for post in self.top_duplicated_posts:
-            result_posts_ids.add(post[0])
-            for duplicate in post[1]:
-                result_posts_ids.add(duplicate)
+        for id1, id2 in self.nonduplicated_posts:
+            newdict = {}
+            newdict['q1'] = self.posts[id1]
+            newdict['q2'] = self.posts[id2]
+            newdict['duplicate'] = '0'
+            self.res.append(newdict)
+        for idl, idrs in self.duplicated_posts:
+            for idr in idrs:
+                newdict = {}
+                newdict['q1'] = self.posts[idl]
+                newdict['q2'] = self.posts[idr]
+                newdict['duplicate'] = '1'
+                self.res.append(newdict)
+        random.shuffle(self.res)
 
-        result_posts_data = []
-        for post in self.posts:
-            post = dict(post.items())
-            if post['Id'] in result_posts_ids:
-                result_posts_data.append(post)
-
-        for result_post in self.top_duplicated_posts:
-            post_summary = {}
-            for post in result_posts_data:
-                if post['Id'] == result_post[0]:
-                    post_summary['title'] = post['Title']
-                    break
-            duplicates_summaries = []
-            for duplicate_id in result_post[1]:
-                for post in result_posts_data:
-                    if post['Id'] == duplicate_id:
-                        duplicate_summary = {}
-                        duplicate_summary['title'] = post['Title']
-                        duplicates_summaries.append(duplicate_summary)
-            post_summary['duplicates'] = duplicates_summaries
-            self.result.append(post_summary)
+        cur_idx = 1
+        for cur_dict in self.res:
+            cur_dict['idx'] = cur_idx
+            cur_idx += 1
+        print (self.res)
 
     def export(self, export_type, export_file):
         """Export result using one of exporters in export.py"""
         print('Exporting to', export_type)
         # Run export function
-        EXPORT_TYPES[export_type](self.result, export_file)
+        EXPORT_TYPES[export_type](self.res, export_file)
         print('Export done.')

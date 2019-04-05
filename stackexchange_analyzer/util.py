@@ -17,6 +17,11 @@ def parse_body(body):
 	#question_body = question_body.split(question_block_start)[1]
 	return question_body
 
+def filter_title(title):
+	"""
+	NOT YET IMPLEMENTED
+	"""
+
 def restricted_float(x):
 	x = float(x)
 	if x <= 0.0:

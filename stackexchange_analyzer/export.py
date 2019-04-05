@@ -2,6 +2,10 @@ import json
 import csv
 
 def export_to_json(res, export_path):
+	"""
+	Not yet implemented
+	"""
+	print ("------NOT YET IMPLEMENTED------")
 	return
 
 def export_to_csv(res, export_path):

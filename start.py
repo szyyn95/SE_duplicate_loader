@@ -14,7 +14,7 @@ parser.add_argument('--exportDirectory', type = str, default = '.',
 parser.add_argument('--exportType', type = str, default = 'csv',
                     help = 'Export file type (json/csv/txt)')
 parser.add_argument('--txtDelimiter', type = str, default = '||',
-                    help = 'Delimiter used for txt output')
+                    help = 'Delimiter used for txt output. Ignore for other output types')
 parser.add_argument('--mute', type = int, default = 1,
                     help = 'Mute mode. 1 for true, 0 for false')
 args = parser.parse_args()

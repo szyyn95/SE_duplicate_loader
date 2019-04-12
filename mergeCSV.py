@@ -1,11 +1,11 @@
 import csv
 import os
 
-directory = "/Users/yihongzhou/Desktop/NYU/DS-GA1012/SE_duplicate_loader-master_2/allTXT/"
+directory = "./allTXT/"
 deduplicate = dict()
 index = 0
 question_pair = 1
-export_path = "/Users/yihongzhou/Desktop/NYU/DS-GA1012/SE_duplicate_loader-master_2/out.csv"
+export_path = "./out.csv"
 
 with open(export_path, 'a', newline='') as csvfile:
 	fieldnames = ["id","qid1","qid2","question1","question2","is_duplicate"]

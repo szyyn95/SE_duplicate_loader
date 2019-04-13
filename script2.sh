@@ -1,20 +1,25 @@
-# echo $PWD
+#!/bin/bash
 cd totalDownload
 for archive in *.7z; do 
 	newFolder="`basename \"$archive\" .7z`"
-	7za x -o"$newFolder" "$archive"
+	if [ $newFolder == "math.stackexchange.com" ]
+	then
+		echo $newFolder
 
-	post="$newFolder""/Posts.xml"
-	postLink="$newFolder""/PostLinks.xml"
-	nonDuplicatesRation=1.5
-	exportDirectory="../allTXT/"
-	exportType="txt"
-	exportName="$(basename "$newFolder")"
-	echo $exportName
-	command="python3 ../start.py --posts $post --postsLinks $postLink --nonDuplicatesRatio $nonDuplicatesRation --exportDirectory $exportDirectory --exportType $exportType --exportName $exportName --mute 1 --txtDelimiter '<***>'"
-	eval $command
+		7za x -o"$newFolder" "$archive"
 
-	rm -r "`basename \"$archive\" .7z`"
+		post="$newFolder""/Posts.xml"
+		postLink="$newFolder""/PostLinks.xml"
+		nonDuplicatesRation=1.5
+		exportDirectory="../allTXT/"
+		exportType="txt"
+		exportName="$(basename "$newFolder")"
+		echo $exportName
+		command="python3 ../start.py --posts $post --postsLinks $postLink --nonDuplicatesRatio $nonDuplicatesRation --exportDirectory $exportDirectory --exportType $exportType --exportName $exportName --mute 1 --txtDelimiter '<***>'"
+		eval $command
+
+		rm -r "`basename \"$archive\" .7z`"
+	fi
 done
 
 # for d in */ ; do

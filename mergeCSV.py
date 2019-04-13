@@ -1,19 +1,26 @@
 import csv
 import os
 
-directory = "./allTXT/"
+import os
+cwd = os.getcwd()
+
+selectedFiles = cwd + "/sorted.txt"
+directory = cwd + "/allTXT/"
 deduplicate = dict()
 index = 0
 question_pair = 1
-export_path = "./out.csv"
+export_path = cwd + "/out.csv"
 
+count = 0
 with open(export_path, 'a', newline='') as csvfile:
-	fieldnames = ["id","qid1","qid2","question1","question2","is_duplicate"]
-	writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
+	for line in open(selectedFiles):
+		filename = line.split("./")[1][:-1]
+		print(filename)
+		fieldnames = ["id","qid1","qid2","question1","question2","is_duplicate"]
+		writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
+		writer.writeheader()
 
-	writer.writeheader()
-
-	for filename in os.listdir(directory):
+		# for filename in os.listdir(directory):
 		for line in open(directory + filename):
 			curdict = dict()
 			line_array = line.split("<***>")
@@ -39,4 +46,7 @@ with open(export_path, 'a', newline='') as csvfile:
 				curdict['qid2'] = deduplicate[line_array[2]]
 
 			writer.writerow(curdict)
+		count += 1
+		if count == 100:
+			break
 

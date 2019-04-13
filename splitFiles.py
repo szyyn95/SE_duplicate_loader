@@ -19,11 +19,11 @@ test = list()
 for t in test_tmp:
 	test.append([t[0],t[3], t[4]])
 
-# with open(cwd + "/test.tsv", 'w') as csvfile:
-# 	fieldnames = ["id","question1","question2"]
-# 	w = csv.writer(csvfile, delimiter='\t')
-# 	w.writerow(fieldnames)
-# 	w.writerows(test)
+with open(cwd + "/test.tsv", 'w') as csvfile:
+	fieldnames = ["id","question1","question2"]
+	w = csv.writer(csvfile, delimiter='\t')
+	w.writerow(fieldnames)
+	w.writerows(test)
 
 with open(cwd + "/train.tsv", 'w') as csvfile:
 	fieldnames = ["id","qid1","qid2","question1","question2","is_duplicate"]

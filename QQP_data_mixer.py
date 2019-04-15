@@ -12,6 +12,8 @@ parser = argparse.ArgumentParser(description = 'Mixing StackExchange and Quora q
 
 parser.add_argument('--SE_Path', type = str, default = 'SE_result/dev.tsv',
                     help = 'Path of StackExchange pairs, tsv format required.')
+parser.add_argument('--SE_Rem_Path', type = str, default = 'SE_result/dev_rem.tsv',
+                    help = 'Path of file to store StackExchange pairs that not mixed with QQP pairs, tsv format required.')
 parser.add_argument('--QQP_Path', type = str, default = 'QQP/dev.tsv',
                     help = 'Path of Quora pairs, tsv format required.')
 parser.add_argument('--Out_Path', type = str, default = 'Mixed/dev.tsv',
@@ -24,39 +26,50 @@ parser.add_argument('--ratio', type = restricted_float, default = 1.0,
 args = parser.parse_args()
 SE_read, QQP_read = 0, 0 # number of SE/QQP pairs we've read
 acc_pair = 0
+SE_rem = 0
 
-with open(args.SE_Path, 'r') as SE_file, open(args.Out_Path, 'w') as out_file:
+with open(args.SE_Path, 'r') as SE_file, open(args.Out_Path, 'w') as out_file, open(args.SE_Rem_Path, 'w') as SE_rem_file:
 	SE_reader = csv.reader(SE_file, delimiter = '\t')
-	writer = csv.writer(out_file, delimiter = '\t')
-	next(SE_reader, None) # skip header
-	writer.writerow(['id', 'qid1', 'qid2', 'question1', 'question2', 'is_duplicate']) #write header in out file
-	for row in SE_reader:
-		row[0] = acc_pair
-		# add header notation to SE pair qids
-		row[1] = 'SE-' + row[1]
-		row[2] = 'SE-' + row[2]
-		writer.writerow(row)
+	mixed_writer = csv.writer(out_file, delimiter = '\t')
+	rem_writer = csv.writer(SE_rem_file, delimiter = '\t')
 
-		acc_pair += 1
-		SE_read += 1
-		if SE_read == args.SE_amount:
-			break
+	next(SE_reader, None) # skip header
+	mixed_writer.writerow(['id', 'qid1', 'qid2', 'question1', 'question2', 'is_duplicate']) #write header in out file
+	rem_writer.writerow(['id', 'qid1', 'qid2', 'question1', 'question2', 'is_duplicate']) #write header in rem file
+	write_mixed = True
+
+	for row in SE_reader:
+		if write_mixed:
+			row[0] = acc_pair
+			# add header notation to SE pair qids
+			row[1] = 'SE-' + row[1]
+			row[2] = 'SE-' + row[2]
+			mixed_writer.writerow(row)
+
+			acc_pair += 1
+			SE_read += 1
+			if SE_read == args.SE_amount:
+				write_mixed = False
+		else:
+			rem_writer.writerow(row)
+			SE_rem += 1
 
 	SE_file.close()
 	out_file.close()
+	SE_rem_file.close()
 
 QQP_num = int(round(min(args.SE_amount, SE_read) * args.ratio))
 
 with open(args.QQP_Path, 'r') as QQP_file, open(args.Out_Path, 'a') as out_file:
 	QQP_reader = csv.reader(QQP_file, delimiter = '\t')
-	writer = csv.writer(out_file, delimiter = '\t')
+	mixed_writer = csv.writer(out_file, delimiter = '\t')
 	next(QQP_reader, None) # skip header
 	for row in QQP_reader:
 		row[0] = acc_pair
 		# add header notation to QQP pair qids
 		row[1] = 'QQP-' + row[1]
 		row[2] = 'QQP-' + row[2]
-		writer.writerow(row)
+		mixed_writer.writerow(row)
 
 		acc_pair += 1
 		QQP_read += 1
@@ -67,4 +80,5 @@ with open(args.QQP_Path, 'r') as QQP_file, open(args.Out_Path, 'a') as out_file:
 	out_file.close()
 
 print ('Num of SE pairs mixed: ' + str(min(args.SE_amount, SE_read)))
+print ('Num of SE pairs that not mixed: ' + str(SE_rem))
 print ('Num of QQP pairs mixed: ' + str(min(QQP_num, QQP_read)))

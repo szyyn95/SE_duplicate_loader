@@ -35,6 +35,6 @@
 | RAT10    | 1           | 0.9 qqp + 0.1 stov        |          |
 | RAT11    | 1           | 1.0 qqp + 0.0 stov        |          |
 <br>
-** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.
-** Name the exp_name in your config file as the EXP_Code in the above table.
+** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.\
+** Name the exp_name in your config file as the EXP_Code in the above table.\
 ** For each of your experiment, please do hyperparameter (i.e. learning rate) tuning

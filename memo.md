@@ -1,13 +1,12 @@
 # Experiment Overlook
 
-## 1. Does the type of intermediate task matter? (EXP Code: TYPE<XX>)
+1. Does the type of intermediate task matter? (EXP Code: TYPE<XX>)
 
 
-## 2. Does the ratio of target task in the intermediate task matter? (EXP Code: RAT<XX>)
+2. Does the ratio of target task in the intermediate task matter? (EXP Code: RAT<XX>)
 
-
-## 3. Semantic similarity analysis of false negatives / false positives.
-Analysis done from results obtained in TYPE and RAT experiments above.
+3. Semantic similarity analysis of false negatives / false positives.
+**Analysis done from results obtained in TYPE and RAT experiments above.
 
 
 # Experiment Plan
@@ -36,6 +35,6 @@ Analysis done from results obtained in TYPE and RAT experiments above.
 | RAT10    | 1           | 0.9 qqp + 0.1 stov        |          |
 | RAT11    | 1           | 1.0 qqp + 0.0 stov        |          |
 <br>
-** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.
-** Name the exp_name in your config file as the EXP_Code in the above table.
-** For each of your experiment, please do hyperparameter (i.e. learning rate) tuning
+** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.<br>
+** Name the exp_name in your config file as the EXP_Code in the above table.<br>
+** For each of your experiment, please do hyperparameter (i.e. learning rate) tuning. <br>

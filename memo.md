@@ -1,13 +1,12 @@
 # Experiment Overlook
 
-## 1. Does the type of intermediate task matter? (EXP Code: TYPE<XX>)
+1. Does the type of intermediate task matter? (EXP Code: TYPE<XX>)
 
 
-## 2. Does the ratio of target task in the intermediate task matter? (EXP Code: RAT<XX>)
+2. Does the ratio of target task in the intermediate task matter? (EXP Code: RAT<XX>)
 
-
-## 3. Semantic similarity analysis of false negatives / false positives.
-Analysis done from results obtained in TYPE and RAT experiments above.
+3. Semantic similarity analysis of false negatives / false positives.
+**Analysis done from results obtained in TYPE and RAT experiments above.
 
 
 # Experiment Plan

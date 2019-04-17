@@ -12,11 +12,11 @@
 # Experiment Plan
 | EXP_Code | do_pretrain | pretrain_tasks            | CLAIM    |
 |----------|-------------|---------------------------|----------|
-| TYPE01   | 1           | cola                      |          |
-| TYPE02   | 1           | sst                       |          |
-| TYPE03   | 1           | mrpc                      |          |
-| TYPE04   | 1           | qqp                       |          |
-| TYPE05   | 1           | sts                       |          |
+| TYPE01   | 1           | cola                      |  Yihong  |
+| TYPE02   | 1           | sst                       |  Yihong  |
+| TYPE03   | 1           | mrpc                      |  Yihong  |
+| TYPE04   | 1           | qqp                       |  Yihong  |
+| TYPE05   | 1           | sts                       |  Yihong  |
 | TYPE06   | 1           | mnli                      |          |
 | TYPE07   | 1           | qnli                      |          |
 | TYPE08   | 1           | rte                       |          |

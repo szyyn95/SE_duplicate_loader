@@ -23,11 +23,11 @@
 | TYPE09   | 1           | wnli                      |          |
 | TYPE10   | 1           | stov (NOT target dataset) |          |
 | -------- | ----------- | ------------------------- | -------- |
-| RAT01    | 1           | 0.0 qqp + 1.0 stov        |          |
-| RAT02    | 1           | 0.1 qqp + 0.9 stov        |          |
-| RAT03    | 1           | 0.2 qqp + 0.8 stov        |          |
-| RAT04    | 1           | 0.3 qqp + 0.7 stov        |          |
-| RAT05    | 1           | 0.4 qqp + 0.6 stov        |          |
+| RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Shan   |
+| RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Shan   |
+| RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Shan   |
+| RAT04    | 1           | 0.3 qqp + 0.7 stov        |   Shan   |
+| RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Shan   |
 | RAT06    | 1           | 0.5 qqp + 0.5 stov        |          |
 | RAT07    | 1           | 0.6 qqp + 0.4 stov        |          |
 | RAT08    | 1           | 0.7 qqp + 0.3 stov        |          |

@@ -23,17 +23,17 @@
 | TYPE09   | 1           | wnli                      |          |
 | TYPE10   | 1           | stov (NOT target dataset) |          |
 | -------- | ----------- | ------------------------- | -------- |
-| RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Shan   |
-| RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Shan   |
-| RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Shan   |
-| RAT04    | 1           | 0.3 qqp + 0.7 stov        |   Shan   |
-| RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Shan   |
+| RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong   |
+| RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong   |
+| RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Yihong   |
+| RAT04    | 1           | 0.3 qqp + 0.7 stov        |   Yihong   |
+| RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Yihong   |
 | RAT06    | 1           | 0.5 qqp + 0.5 stov        |   Yihong |
-| RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Yihong |
-| RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Yihong |
-| RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Yihong |
-| RAT10    | 1           | 0.9 qqp + 0.1 stov        |   Yihong |
-| RAT11    | 1           | 1.0 qqp + 0.0 stov        |   Yihong |
+| RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Shan |
+| RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Shan |
+| RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Shan |
+| RAT10    | 1           | 0.9 qqp + 0.1 stov        |   Shan |
+| RAT11    | 1           | 1.0 qqp + 0.0 stov        |   Shan |
 <br>
 ** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.<br>
 ** Name the exp_name in your config file as the EXP_Code in the above table.<br>

@@ -41,6 +41,8 @@ with open(args.SE_path, 'r') as SE_file, open(args.Out_path, 'w') as out_file:
 	mixed_writer.writerow(['id', 'qid1', 'qid2', 'question1', 'question2', 'is_duplicate']) #write header in out file
 
 	for row in SE_reader:
+		if SE_read >= SE_num:
+			break
 		try:	
 			row[0] = acc_pair
 			# add header notation to SE pair qids
@@ -53,9 +55,6 @@ with open(args.SE_path, 'r') as SE_file, open(args.Out_path, 'w') as out_file:
 		except:
 			continue
 
-		if SE_read == SE_num:
-			break
-
 	SE_file.close()
 	out_file.close()
 
@@ -64,6 +63,8 @@ with open(args.QQP_path, 'r') as QQP_file, open(args.Out_path, 'a') as out_file:
 	mixed_writer = csv.writer(out_file, delimiter = '\t')
 	next(QQP_reader, None) # skip header
 	for row in QQP_reader:
+		if QQP_read >= QQP_num:
+			break
 		try:
 			row[0] = acc_pair
 			# add header notation to QQP pair qids
@@ -75,9 +76,6 @@ with open(args.QQP_path, 'r') as QQP_file, open(args.Out_path, 'a') as out_file:
 			QQP_read += 1
 		except:
 			continue
-
-		if QQP_read == QQP_num:
-			break
 
 	QQP_file.close()
 	out_file.close()

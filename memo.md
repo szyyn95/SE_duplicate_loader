@@ -13,11 +13,11 @@
 | EXP_Code | do_pretrain | pretrain_tasks            | CLAIM    |
 |----------|-------------|---------------------------|----------|
 | TYPE01   | 1           | cola                      |   XZ       |
-| TYPE02   | 1           | sst                       |     XZ     |
+| TYPE02   | 1           | sst                       |     Ziwei     |
 | TYPE03   | 1           | mrpc                      |  Ziwei        |
 | TYPE04   | 1           | qqp                       |   Ziwei  |
 | TYPE05   | 1           | sts-b                       |   XZ  |
-| TYPE06   | 1           | mnli                      |   Ziwei  |
+| TYPE06   | 1           | mnli                      |   XZ  |
 | TYPE07   | 1           | qnli                      |   Ziwei  |
 | TYPE08   | 1           | rte                       |   Ziwei  |
 | TYPE09   | 1           | wnli                      |   Ziwei  |

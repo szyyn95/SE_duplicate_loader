@@ -12,11 +12,11 @@
 # Experiment Plan
 | EXP_Code | do_pretrain | pretrain_tasks            | CLAIM    |
 |----------|-------------|---------------------------|----------|
-| TYPE01   | 1           | cola                      |          |
-| TYPE02   | 1           | sst                       |          |
-| TYPE03   | 1           | mrpc                      |          |
+| TYPE01   | 1           | cola                      |   XZ       |
+| TYPE02   | 1           | sst                       |     XZ     |
+| TYPE03   | 1           | mrpc                      |  Ziwei        |
 | TYPE04   | 1           | qqp                       |   Ziwei  |
-| TYPE05   | 1           | sts                       |   Ziwei  |
+| TYPE05   | 1           | sts-b                       |   XZ  |
 | TYPE06   | 1           | mnli                      |   Ziwei  |
 | TYPE07   | 1           | qnli                      |   Ziwei  |
 | TYPE08   | 1           | rte                       |   Ziwei  |

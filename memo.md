@@ -15,13 +15,13 @@
 | TYPE01   | 1           | cola                      |  Yihong  |
 | TYPE02   | 1           | sst                       |  Yihong  |
 | TYPE03   | 1           | mrpc                      |  Yihong  |
-| TYPE04   | 1           | qqp                       |  Yihong  |
-| TYPE05   | 1           | sts                       |  Yihong  |
-| TYPE06   | 1           | mnli                      |          |
-| TYPE07   | 1           | qnli                      |          |
-| TYPE08   | 1           | rte                       |          |
-| TYPE09   | 1           | wnli                      |          |
-| TYPE10   | 1           | stov (NOT target dataset) |          |
+| TYPE04   | 1           | qqp                       |   Ziwei  |
+| TYPE05   | 1           | sts                       |   Ziwei  |
+| TYPE06   | 1           | mnli                      |   Ziwei  |
+| TYPE07   | 1           | qnli                      |   Ziwei  |
+| TYPE08   | 1           | rte                       |   Ziwei  |
+| TYPE09   | 1           | wnli                      |   Ziwei  |
+| TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  |
 | -------- | ----------- | ------------------------- | -------- |
 | RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Shan   |
 | RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Shan   |

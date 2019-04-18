@@ -12,15 +12,15 @@
 # Experiment Plan
 | EXP_Code | do_pretrain | pretrain_tasks            | CLAIM    |
 |----------|-------------|---------------------------|----------|
-| TYPE01   | 1           | cola                      |   XZ       |
-| TYPE02   | 1           | sst                       |     Ziwei     |
-| TYPE03   | 1           | mrpc                      |  Ziwei        |
-| TYPE04   | 1           | qqp                       |   Ziwei  |
-| TYPE05   | 1           | sts-b                       |   XZ  |
-| TYPE06   | 1           | mnli                      |   XZ  |
-| TYPE07   | 1           | qnli                      |   Ziwei  |
-| TYPE08   | 1           | rte                       |   Ziwei  |
-| TYPE09   | 1           | wnli                      |   Ziwei  |
+| TYPE01   | 1           | cola   (SingleClf)        |   XZ     |
+| TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |
+| TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |
+| TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |
+| TYPE05   | 1           | sts-b      (PairReg)      |   XZ     |
+| TYPE06   | 1           | mnli     (PairClf)        |   XZ     |
+| TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  |
+| TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |
+| TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |
 | TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  |
 | -------- | ----------- | ------------------------- | -------- |
 | RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong |

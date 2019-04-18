@@ -12,6 +12,8 @@
 # Experiment Plan
 | EXP_Code | do_pretrain | pretrain_tasks            | CLAIM    |
 |----------|-------------|---------------------------|----------|
+| NAIVE    | 0           | none (also no train on target)                  |   XZ     |
+| BASE     | 0           | none                      |   XZ     |
 | TYPE01   | 1           | cola   (SingleClf)        |   XZ     |
 | TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |
 | TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |

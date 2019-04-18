@@ -24,7 +24,6 @@
 | TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |        |     |     |           |         |
 | TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |        |     |     |           |         |
 | TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  |        |     |     |           |         |
-|----------|-------------|---------------------------|----------|--------|-----|-----|-----------|---------|
 | RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong |        |     |     |           |         |
 | RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong |        |     |     |           |         |
 | RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Yihong |        |     |     |           |         |

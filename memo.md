@@ -15,7 +15,7 @@
 | NAIVE    | 0           | none (also no train on target)|   XZ |0.491   |0.405|0.576| 0.405     |1.000    |
 | BASE     | 0           | none                      |   XZ     |0.904   |0.916|0.893| 0.921     |0.867    |
 | TYPE01   | 1           | cola   (SingleClf)        |   XZ     |0.897   |0.911|0.884| 0.929     |0.843    |
-| TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |        |     |     |           |         |
+| TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |0.901   |0.913|0.890| 0.912     |0.868    |
 | TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |        |     |     |           |         |
 | TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |        |     |     |           |         |
 | TYPE05   | 1           | sts-b      (PairReg)      |   XZ     |0.907   |0.918|0.895| 0.923     |0.870    |

@@ -21,8 +21,8 @@
 | TYPE05   | 1           | sts-b      (PairReg)      |   XZ     |0.907   |0.918|0.895| 0.923     |0.870    |
 | TYPE06   | 1           | mnli     (PairClf)        |   XZ     |0.897   |0.911|0.884| 0.929     |0.843    |
 | TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  |        |     |     |           |         | 
-| TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |        |     |     |           |         |
-| TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |        |     |     |           |         |
+| TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |0.899   |0.911|0.888| 0.908     |0.868    |
+| TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |0.298   |0.595|0.000| 0.000     |0.000    |
 | TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  |        |     |     |           |         |
 | RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong |        |     |     |           |         |
 | RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong |        |     |     |           |         |

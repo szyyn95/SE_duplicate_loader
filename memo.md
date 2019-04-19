@@ -30,11 +30,11 @@
 | RAT04    | 1           | 0.3 qqp + 0.7 stov        |   Yihong |        |     |     |           |         |
 | RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Yihong |        |     |     |           |         |
 | RAT06    | 1           | 0.5 qqp + 0.5 stov        |   Yihong |        |     |     |           |         |
-| RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Shan   |        |     |     |           |         |
-| RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Shan   |        |     |     |           |         |
-| RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Shan   |        |     |     |           |         |
-| RAT10    | 1           | 0.9 qqp + 0.1 stov        |   Shan   |        |     |     |           |         |
-| RAT11    | 1           | 1.0 qqp + 0.0 stov        |   Shan   |        |     |     |           |         |
+| RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Shan   |0.880   |0.895|0.865|0.901      |0.832    |
+| RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Shan   |0.897   |0.909|0.884|0.911      |0.859    |
+| RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Shan   |0.896   |0.909|0.884|0.908      |0.862    |
+| RAT10    | 1           | 0.9 qqp + 0.1 stov        |   Shan   |0.896   |0.910|0.883|0.925      |0.845    |
+| RAT11    | 1           | 1.0 qqp + 0.0 stov        |   Shan   |0.881   |0.896|0.865|0.907      |0.827    |
 <br>
 ** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.<br>
 ** Name the exp_name in your config file as the EXP_Code in the above table.<br>

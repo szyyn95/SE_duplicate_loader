@@ -17,7 +17,7 @@
 | TYPE01   | 1           | cola   (SingleClf)        |   XZ     |0.897   |0.911|0.884| 0.929     |0.843    |
 | TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |0.901   |0.913|0.890| 0.912     |0.868    |
 | TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |0.892   |0.904|0.879| 0.896     |0.864    |
-| TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |        |     |     |           |         |
+| TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |0.900   |0.912|0.088| 0.918     |0.868    |
 | TYPE05   | 1           | sts-b      (PairReg)      |   XZ     |0.907   |0.918|0.895| 0.923     |0.870    |
 | TYPE06   | 1           | mnli     (PairClf)        |   XZ     |0.897   |0.911|0.884| 0.929     |0.843    |
 | TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  |        |     |     |           |         | 

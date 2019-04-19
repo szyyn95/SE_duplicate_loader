@@ -23,7 +23,7 @@
 | TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  |        |     |     |           |         | 
 | TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |0.899   |0.911|0.888| 0.908     |0.868    |
 | TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |0.298   |0.595|0.000| 0.000     |0.000    |
-| TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  |        |     |     |           |         |
+| TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  |Duplicate w/ RAT01|     |     |           |         |
 | RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong |        |     |     |           |         |
 | RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong |        |     |     |           |         |
 | RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Yihong |        |     |     |           |         |

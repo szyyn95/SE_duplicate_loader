@@ -18,7 +18,7 @@ parser.add_argument('--SE_path', type = str, default = './SE_result/train.tsv',
                     help = 'Path of StackExchange pairs, tsv format required.')
 parser.add_argument('--QQP_path', type = str, default = './QQP/train.tsv',
                     help = 'Path of Quora pairs, tsv format required.')
-parser.add_argument('--Out_path', type = str, default = './Mixed/mixed',
+parser.add_argument('--Out_path', type = str, default = './Mixed/Mixed',
 					help = 'Path of output file, tsv format required.')
 parser.add_argument('--total_amount', type = int, default = 200000,
 					help = 'Total number of pairs in the mixed data set. The input here should not exceed 20000.')
@@ -26,7 +26,7 @@ parser.add_argument('--ratio', type = restricted_float, default = 0.5,
 					help = 'Ratio of SE pairs within the whole mixed set. Valid input from 0.0 to 1.0.')
 
 args = parser.parse_args()
-args.Out_path = args.Out_path + '_' + str(args.total_amount) + '_' + str(args.ratio) + '.tsv'
+args.Out_path = args.Out_path + '_' + str(int(args.ratio * 10)) + '.tsv'
 SE_read, QQP_read = 0, 0 # number of SE/QQP pairs we've read
 acc_pair = 0
 

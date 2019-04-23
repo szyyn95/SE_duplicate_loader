@@ -3,11 +3,19 @@ import csv
 
 parser = argparse.ArgumentParser(description = 'General spliter to split data sets with certain ratio')
 
+<<<<<<< HEAD
 parser.add_argument('--input_path', type = str, default = './SE_result/non_split_whole_dataset_shuffled_25w.csv',
                     help = 'Path of input files, csv format required.')
 parser.add_argument('--output_path1', type = str, default = './SE_result/intermediate_train.tsv',
                     help = 'Path of the first output files, tsv format required.')
 parser.add_argument('--output_path2', type = str, default = './SE_result/target_full.tsv',
+=======
+parser.add_argument('--input_path', type = str, default = './SE_result/full_train.tsv',
+                    help = 'Path of input files, tsv format required.')
+parser.add_argument('--output_path1', type = str, default = './SE_result/intermediate_train.tsv',
+                    help = 'Path of the first output files, tsv format required.')
+parser.add_argument('--output_path2', type = str, default = './SE_result/train.tsv',
+>>>>>>> origin/master
                     help = 'Path of the second output files, tsv format required.')
 parser.add_argument('--amount', type = int, default = 200000,
                     help = 'Sepcify the amount of data for first output. The rest will be in the second')
@@ -17,7 +25,11 @@ acc_pair = 0
 header = None
 
 with open(args.input_path, 'r') as input_file, open(args.output_path1, 'w') as out_file1, open(args.output_path2, 'w') as out_file2:
+<<<<<<< HEAD
 	reader = csv.reader(input_file)
+=======
+	reader = csv.reader(input_file, delimiter = '\t')
+>>>>>>> origin/master
 	writer1 = csv.writer(out_file1, delimiter = '\t')
 	writer2 = csv.writer(out_file2, delimiter = '\t')
 	header = next(reader, None)

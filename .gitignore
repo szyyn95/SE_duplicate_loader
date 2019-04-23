@@ -2,7 +2,10 @@
 *.txt
 *.xml
 *.tsv
+<<<<<<< HEAD
 *.ipynb
 *.zip
 original
+=======
+>>>>>>> origin/master
 *~

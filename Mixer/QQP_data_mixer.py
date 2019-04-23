@@ -18,7 +18,11 @@ parser.add_argument('--SE_path', type = str, default = './SE_result/train.tsv',
                     help = 'Path of StackExchange pairs, tsv format required.')
 parser.add_argument('--QQP_path', type = str, default = './QQP/train.tsv',
                     help = 'Path of Quora pairs, tsv format required.')
+<<<<<<< HEAD
 parser.add_argument('--Out_path', type = str, default = './Mixed/Mixed',
+=======
+parser.add_argument('--Out_path', type = str, default = './Mixed/mixed',
+>>>>>>> origin/master
 					help = 'Path of output file, tsv format required.')
 parser.add_argument('--total_amount', type = int, default = 200000,
 					help = 'Total number of pairs in the mixed data set. The input here should not exceed 20000.')
@@ -26,7 +30,11 @@ parser.add_argument('--ratio', type = restricted_float, default = 0.5,
 					help = 'Ratio of SE pairs within the whole mixed set. Valid input from 0.0 to 1.0.')
 
 args = parser.parse_args()
+<<<<<<< HEAD
 args.Out_path = args.Out_path + '_' + str(int(args.ratio * 10)) + '.tsv'
+=======
+args.Out_path = args.Out_path + '_' + str(args.total_amount) + '_' + str(args.ratio) + '.tsv'
+>>>>>>> origin/master
 SE_read, QQP_read = 0, 0 # number of SE/QQP pairs we've read
 acc_pair = 0
 
@@ -41,8 +49,11 @@ with open(args.SE_path, 'r') as SE_file, open(args.Out_path, 'w') as out_file:
 	mixed_writer.writerow(['id', 'qid1', 'qid2', 'question1', 'question2', 'is_duplicate']) #write header in out file
 
 	for row in SE_reader:
+<<<<<<< HEAD
 		if SE_read >= SE_num:
 			break
+=======
+>>>>>>> origin/master
 		try:	
 			row[0] = acc_pair
 			# add header notation to SE pair qids
@@ -55,6 +66,12 @@ with open(args.SE_path, 'r') as SE_file, open(args.Out_path, 'w') as out_file:
 		except:
 			continue
 
+<<<<<<< HEAD
+=======
+		if SE_read == SE_num:
+			break
+
+>>>>>>> origin/master
 	SE_file.close()
 	out_file.close()
 
@@ -63,8 +80,11 @@ with open(args.QQP_path, 'r') as QQP_file, open(args.Out_path, 'a') as out_file:
 	mixed_writer = csv.writer(out_file, delimiter = '\t')
 	next(QQP_reader, None) # skip header
 	for row in QQP_reader:
+<<<<<<< HEAD
 		if QQP_read >= QQP_num:
 			break
+=======
+>>>>>>> origin/master
 		try:
 			row[0] = acc_pair
 			# add header notation to QQP pair qids
@@ -77,6 +97,12 @@ with open(args.QQP_path, 'r') as QQP_file, open(args.Out_path, 'a') as out_file:
 		except:
 			continue
 
+<<<<<<< HEAD
+=======
+		if QQP_read == QQP_num:
+			break
+
+>>>>>>> origin/master
 	QQP_file.close()
 	out_file.close()
 

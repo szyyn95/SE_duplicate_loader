@@ -3,5 +3,6 @@
 *.xml
 *.tsv
 *.ipynb
+*.zip
 original
 *~

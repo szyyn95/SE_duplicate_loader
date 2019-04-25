@@ -59,11 +59,11 @@
 | RAT04    | 1           | 0.3 qqp + 0.7 stov        |   Yihong ||||||
 | RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Yihong ||||||
 | RAT06    | 1           | 0.5 qqp + 0.5 stov        |   Yihong ||||||
-| RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Shan   |0.462(?)|0.377|0.548|0.377|1.00|
-| RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Shan   ||||||
-| RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Shan   ||||||
-| RAT10    | 1           | 0.9 qqp + 0.1 stov        |   Shan   ||||||
-| RAT11    | 1           | 1.0 qqp + 0.0 stov        |   Shan   ||||||
+| RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Shan   |0.908|0.923|0.893|0.934|0.856|
+| RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Shan   |0.894|0.908|0.880|0.866|0.895|
+| RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Shan   |0.879|0.898|0.860|0.888|0.834|
+| RAT10    | 1           | 0.9 qqp + 0.1 stov        |   Shan   |0.880|0.900|0.860|0.908|0.818|
+| RAT11    | 1           | 1.0 qqp + 0.0 stov        |   Shan   |0.865|0.883|0.846|0.842|0.851|
 <br>
 
 ** Please put your name under CLAIM to take the experiment for yourself. You shall idealy claim at least 5 experiments so that the project is divided evenly.<br>

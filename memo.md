@@ -47,7 +47,7 @@
 | TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |0.886|0.904|0.867|0.909|0.829|
 | TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |0.870|0.887|0.853|0.840|0.867|
 | TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |0.879|0.900|0.857|0.929|0.796|
-| TYPE05   | 1           | sts-b      (PairReg)      |   XZ     ||||||
+| TYPE05   | 1           | sts-b      (PairReg)      |   XZ     |0.892|0.908|0.875|0.901|0.851|
 | TYPE06   | 1           | mnli     (PairClf)        |   XZ     ||||||
 | TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  |0.885|0.902|0.868|0.885|0.851|
 | TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |0.885|0.902|0.868|0.885|0.851|

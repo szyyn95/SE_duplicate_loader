@@ -41,9 +41,9 @@
 # Experiment Plan (5k target)
 | EXP_Code | do_pretrain | pretrain_tasks            | CLAIM    | acc_f1 | acc | f1  | precision | recall  |
 |----------|-------------|---------------------------|----------|--------|-----|-----|-----------|---------|
-| NAIVE    | 0           | none (also no train on target)|   XZ |0.462|0.462|0.462|0.377|0.548|0.377|1.000|
+| NAIVE    | 0           | none (also no train on target)|   XZ |0.462|0.377|0.548|0.377|1.000|
 | BASE     | 0           | none                      |   Shan   |0.883|0.898|0.867|0.851|0.884|
-| TYPE01   | 1           | cola   (SingleClf)        |   XZ     ||||||
+| TYPE01   | 1           | cola   (SingleClf)        |   XZ     |0.885|0.904|0.865|0.919|0.818|
 | TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |0.886|0.904|0.867|0.909|0.829|
 | TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |0.870|0.887|0.853|0.840|0.867|
 | TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |0.879|0.900|0.857|0.929|0.796|

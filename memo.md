@@ -44,14 +44,14 @@
 | NAIVE    | 0           | none (also no train on target)|   XZ |        |     |     |           |         |
 | BASE     | 0           | none                      |   Shan   |0.883|0.898|0.867|0.851|0.884|
 | TYPE01   | 1           | cola   (SingleClf)        |   XZ     ||||||
-| TYPE02   | 1           | sst   (SingelClf)         |    Ziwei ||||||
-| TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   ||||||
-| TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  ||||||
+| TYPE02   | 1           | sst   (SingelClf)         |    Ziwei |0.886|0.904|0.867|0.909|0.829|
+| TYPE03   | 1           | mrpc      (PairClf)       |  Ziwei   |0.870|0.887|0.853|0.840|0.867|
+| TYPE04   | 1           | qqp            (PairClf)  |   Ziwei  |0.879|0.900|0.857|0.929|0.796|
 | TYPE05   | 1           | sts-b      (PairReg)      |   XZ     ||||||
 | TYPE06   | 1           | mnli     (PairClf)        |   XZ     ||||||
-| TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  ||||||
-| TYPE08   | 1           | rte     (PairClf)         |   Ziwei  ||||||
-| TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  ||||||
+| TYPE07   | 1           | qnli     (PairClf)        |   Ziwei  |0.885|0.902|0.868|0.885|0.851|
+| TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |0.885|0.902|0.868|0.885|0.851|
+| TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |0.311|0.623|0.000|0.000|0.000|
 | TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  ||||||
 | RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong ||||||
 | RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong ||||||

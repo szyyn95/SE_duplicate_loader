@@ -53,12 +53,12 @@
 | TYPE08   | 1           | rte     (PairClf)         |   Ziwei  |0.885|0.902|0.868|0.885|0.851|
 | TYPE09   | 1           | wnli      (PairClf)       |   Ziwei  |0.311|0.623|0.000|0.000|0.000|
 | TYPE10   | 1           | stov (NOT target dataset) |   Ziwei  ||||||
-| RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong ||||||
-| RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong ||||||
-| RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Yihong ||||||
+| RAT01    | 1           | 0.0 qqp + 1.0 stov        |   Yihong |0.909|0.920|0.899|0.914|0.885|
+| RAT02    | 1           | 0.1 qqp + 0.9 stov        |   Yihong |0.909|0.919|0.899|0.913|0.884|
+| RAT03    | 1           | 0.2 qqp + 0.8 stov        |   Yihong |0.905|0.916|0.894|0.916|0.874|
 | RAT04    | 1           | 0.3 qqp + 0.7 stov        |   Yihong ||||||
-| RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Yihong ||||||
-| RAT06    | 1           | 0.5 qqp + 0.5 stov        |   Yihong ||||||
+| RAT05    | 1           | 0.4 qqp + 0.6 stov        |   Yihong |0.905|0.915|0.894|0.909|0.880|
+| RAT06    | 1           | 0.5 qqp + 0.5 stov        |   Yihong |0.906|0.918|0.894|0.929|0.862|
 | RAT07    | 1           | 0.6 qqp + 0.4 stov        |   Shan   |0.908|0.923|0.893|0.934|0.856|
 | RAT08    | 1           | 0.7 qqp + 0.3 stov        |   Shan   |0.894|0.908|0.880|0.866|0.895|
 | RAT09    | 1           | 0.8 qqp + 0.2 stov        |   Shan   |0.879|0.898|0.860|0.888|0.834|
